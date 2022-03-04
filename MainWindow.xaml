@@ -1,0 +1,35 @@
+﻿<Window x:Class="GTAmanager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GTAmanager"
+        mc:Ignorable="d"
+        Title="GTAmanager" Height="240" Width="255" MinHeight="200" MinWidth="200">
+    <Grid>
+        <Button x:Name="btnSoloLobby" Content="Create solo lobby" Click="CreateSoloLobby" Margin="10,11,10,0" VerticalAlignment="Top" Width="Auto" Height="36" FontSize="18" FontFamily="Roboto Black" Grid.ColumnSpan="2"/>
+        <ProgressBar x:Name="ProgressBarSoloLobby" Margin="10,11,10,0" VerticalAlignment="Top" Width="Auto" Height="36" Grid.ColumnSpan="2" IsIndeterminate="true" Visibility="Collapsed"/>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnSuspend" Content="Suspend" Click="SuspendClicked" Margin="10,52,5,0" VerticalAlignment="Top" Width="Auto" Height="36" FontSize="18" FontFamily="Roboto Black" Grid.Column="0"/>
+            <Button x:Name="btnResume" Content="Resume" Click="ResumeClicked" Margin="5,52,10,0" VerticalAlignment="Top" Width="Auto" Height="36" FontSize="18" FontFamily="Roboto Black" Grid.Column="1"/>
+        </Grid >
+
+        <Grid Margin="0,94,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="32"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <CheckBox x:Name="cbKillGta" Click="KillGtaSwitchClicked" Content="" Margin="10,3,0,0" Height="22" Width="22" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0"/>
+            <Button x:Name="btnKillGta" Click="KillGtaClicked"  Content="Kill GTA" Margin="0,0,10,0" VerticalAlignment="Top" Width="Auto" Height="22" FontSize="12" FontFamily="Roboto Black" Grid.Column="1" IsEnabled="False"/>
+        </Grid >
+
+        <TextBox x:Name="tbLog" Margin="10,122,10,10" TextWrapping="Wrap" Text="" Height="Auto"/>
+    </Grid>
+</Window>
